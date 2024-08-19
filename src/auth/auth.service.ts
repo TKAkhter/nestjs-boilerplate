@@ -7,8 +7,8 @@ import * as bcrypt from 'bcryptjs';
 export class AuthService {
   constructor(
     private readonly usersService: UsersService,
-    private readonly jwtService: JwtService,
-  ) { }
+    private readonly jwtService: JwtService
+  ) {}
 
   async login(username: string, password: string) {
     const user = await this.usersService.findOne(username);
@@ -17,9 +17,9 @@ export class AuthService {
     }
     const payload = { username: user.username };
     const accessToken = this.jwtService.sign(payload);
-    return { 
+    return {
       username: user.username,
-      access_token: accessToken 
+      access_token: accessToken,
     };
   }
 }

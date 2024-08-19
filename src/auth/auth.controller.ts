@@ -7,7 +7,7 @@ export class AuthController {
   constructor(
     private readonly authService: AuthService,
     private readonly jwtStrategy: JwtStrategy
-  ) { }
+  ) {}
 
   @Post('login')
   async login(@Body() body: { username: string; password: string }) {
