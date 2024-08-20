@@ -11,7 +11,7 @@ import { winstonLogger } from './services/winston/logger';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    MongooseModule.forRoot(process.env.MONGODB_URI),
+    MongooseModule.forRoot(process.env.MONGODB_URI!),
     WinstonModule.forRoot({
       instance: winstonLogger,
     }),
